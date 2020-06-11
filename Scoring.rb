@@ -11,26 +11,18 @@ class Scoring
     sd = "scoringDigit"
 
     # For empty dice array
-    if (dice.empty?)
-      return 0
-    end
+    return 0 if (dice.empty?)
 
     # Check which dice number has a hattrick
     if (dice.size >= 3)
-      (1..6).each { |num|
-        if (dice.count(num) >= 3)
-          hattrickNum = num
-        end
-      }
+      (1..6).each do |num|
+        hattrickNum = num if (dice.count(num) >= 3)
+      end
     end
 
     # Evaluate hattrick scores
     if(dice.size >= 3)
-      if(hattrickNum==1)
-        sum += 1000
-      else
-        sum += (hattrickNum * 100)
-      end
+      hattrickNum==1 ? sum += 1000 : sum += (hattrickNum * 100)
     end
 
     # Remove hattricked elements from dice array

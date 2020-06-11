@@ -15,11 +15,11 @@ class Game
       numOfPlayers = 2
     end
 
-    numOfPlayers.times { |i|
+    numOfPlayers.times do |i|
       pname = "Player" + (i+1).to_s
       p = Player.new(pname)
       playerArray << p
-    }
+    end
 
     isFinalTurn = false
     while true                                    # This is the turn going into every player
@@ -84,9 +84,7 @@ class Game
 
         # Getting in the game - condition
         if(!player.started)
-          if (totalTurnScore >= 300)
-            player.setStarted(true)
-          end
+            player.setStarted(true) if (totalTurnScore >= 300)
         end
 
         # Accumulate points into total score only when getting in the game condition is satisfied

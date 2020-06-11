@@ -1,7 +1,7 @@
   class Player
-    attr_reader :totalScore, :playing, :name, :started, :diceset
+    attr_reader :totalScore, :name, :started
 
-    def initialize(name,score=0,playing=true,started=false,diceset=[])
+    def initialize(name,score=0,started=false)
       @name = name
       @totalScore = score
       @started = started
