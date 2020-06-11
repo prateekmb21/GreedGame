@@ -17,11 +17,9 @@ class Scoring
 
     # Check which dice number has a hattrick
     if (dice.size >= 3)
-      (1..6).each { |num|
-        if (dice.count(num) >= 3)
-          hattrickNum = num
-        end
-      }
+      (1..6).each  do |num|
+         hattrickNum = num if (dice.count(num) >= 3)
+       end
     end
 
     # Evaluate hattrick scores
