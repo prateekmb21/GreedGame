@@ -9,7 +9,7 @@ class Game
     turn = 1
     playerArray = []
     puts "Please enter number of players"
-    numOfPlayers = Integer(gets.chomp)
+    numOfPlayers = (gets.chomp).to_f.round
     if (numOfPlayers < 2)
       puts "You just tried to trick the game by passing <2 players. But as mercy, I am setting a default as 2 players"
       numOfPlayers = 2
@@ -105,6 +105,13 @@ class Game
           end
         end
       }
+      puts "------------------"
+      puts "Player scores after Turn #{turn}"
+      puts "------------------"
+      playerArray.each { |player|
+        puts "#{player.name}: #{player.totalScore}"
+      }
+      puts "------------------"
       break if turn==breakTurn  # Break the game after the final turn
       turn += 1
     end
