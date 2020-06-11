@@ -53,7 +53,7 @@ class Game
             puts "All of your dice scored. Do you want to roll them again? (y/n)"
             response = gets.chomp
             if (response=="n")
-              break
+              break if (response=="n")
             elsif (response=="y")
               diceCount = 5
               turnIterator += 1
