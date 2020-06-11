@@ -48,6 +48,6 @@ class Scoring
     }
 
     @dice = dice
-    return sum
+    sum
   end
 end
